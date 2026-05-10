@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>View of ${path}</title>
+    <link rel="icon" type="image/x-icon" href="/cgires/resource/favicon.ico">
+    <style>
+    a {
+      color: #0033cc;
+    }
+    section {
+        width:80%;
+        margin:auto;
+    }
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: #eee;
+        background: #121212;
+      }
+      a {
+       color: #99ccff;
+      }
+    }
+   </style>
+  </head>
+  <body>
+    <section>
+        <div id="editor">${content} 
+        </div>
+    </section>
+    <script src="/cgires/resource/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/${theme}");
+        editor.session.setMode("ace/mode/rust");
+        let options = {
+            fontSize: "12pt"
+        }
+        editor.setOptions(options)
+        editor.gotoLine(${line}, ${col}, true)
+        editor.setReadOnly(true)
+   </script>
+  </body>
+</html>

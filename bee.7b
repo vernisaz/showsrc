@@ -1,0 +1,15 @@
+cgidir=..${~/~}rust_dev_studio
+project  =${cgidir}${~/~}showsrc
+main=src${~/~}rust${~/~}show
+comp opts=[--extern,simweb]
+common =..${~/~}simscript${~/~}comm-build.7b:file
+crate_dir=..${~/~}crates
+doc_dir=..${~/~}docs
+
+set_env(ALLOWED_EXTS,.rs)
+
+array(comp opts,-C,opt-level=3)
+assign(comp opts,~~)
+#
+display(URL to hit - http://mac:3000/rustcgi/showsrc?src=&line=$pos=)
+include(common);
