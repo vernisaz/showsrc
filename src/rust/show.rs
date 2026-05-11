@@ -15,6 +15,7 @@ impl WebPage for Src {
         let web = WebData::default();
         let src = web.param("src").unwrap_or_default();
         let path = PathBuf::from(&src);
+        // TODO add a check that the path is within workspace
         let content = if let Some(ext) = path.extension()
             && env!("ALLOWED_EXTS").contains(&ext.display().to_string())
         {
