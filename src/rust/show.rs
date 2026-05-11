@@ -26,7 +26,7 @@ impl WebPage for Src {
         page_map.insert("theme", web.param("theme").unwrap_or("monokai".to_string()));
         page_map.insert("line", web.param("line").unwrap_or_default());
         page_map.insert("col", web.param("pos").unwrap_or_default());
-        page_map.insert("content", html_encode(&content));
+        page_map.insert("content", html_encode(&content).to_string());
         Ok(())
     }
 }
