@@ -6,6 +6,7 @@ common =..${~/~}simscript${~/~}comm-build.7b:file
 crate_dir=..${~/~}crates
 doc_dir=..${~/~}docs
 
+set_env(VERSION, 1.01)
 set_env(ALLOWED_EXTS,.rs)
 
 array(comp opts,-C,opt-level=3)
