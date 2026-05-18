@@ -12,5 +12,5 @@ set_env(ALLOWED_EXTS,.rs)
 array(comp opts,-C,opt-level=3)
 assign(comp opts,~~)
 #
-display(URL to hit - ${YELLOW}http://mac:3000/rustcgi/showsrc?src=<src file location>&line=&pos={NO_COLOR})
+display(URL to hit - ${YELLOW}http://mac:3000/rustcgi/showsrc?src=<src file location>&line=&pos=${NO_COLOR})
 include(common);
